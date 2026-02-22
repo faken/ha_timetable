@@ -1,0 +1,123 @@
+set_time_slots:
+  name: Set time slots
+  description: Define the time slot schedule (period start/end times).
+  fields:
+    entity_id:
+      name: Entity
+      description: The timetable current lesson sensor entity.
+      required: true
+      selector:
+        entity:
+          integration: ha_timetable
+          domain: sensor
+    time_slots:
+      name: Time slots
+      description: "List of time slots, e.g. [{slot: 1, start: '08:00', end: '08:45'}]"
+      required: true
+      selector:
+        object:
+
+set_lesson:
+  name: Set lesson
+  description: Add or update a lesson in the timetable.
+  fields:
+    entity_id:
+      name: Entity
+      description: The timetable current lesson sensor entity.
+      required: true
+      selector:
+        entity:
+          integration: ha_timetable
+          domain: sensor
+    day:
+      name: Day
+      description: Day of the week.
+      required: true
+      selector:
+        select:
+          options:
+            - monday
+            - tuesday
+            - wednesday
+            - thursday
+            - friday
+    slot:
+      name: Slot
+      description: The time slot number.
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 15
+          mode: box
+    subject:
+      name: Subject
+      description: The subject name.
+      required: true
+      selector:
+        text:
+    teacher:
+      name: Teacher
+      description: The teacher name (optional).
+      required: false
+      selector:
+        text:
+    room:
+      name: Room
+      description: The room number/name (optional).
+      required: false
+      selector:
+        text:
+    color:
+      name: Color
+      description: "Color hex code for the subject (optional, e.g. #4CAF50)."
+      required: false
+      selector:
+        text:
+
+remove_lesson:
+  name: Remove lesson
+  description: Remove a lesson from the timetable.
+  fields:
+    entity_id:
+      name: Entity
+      description: The timetable current lesson sensor entity.
+      required: true
+      selector:
+        entity:
+          integration: ha_timetable
+          domain: sensor
+    day:
+      name: Day
+      description: Day of the week.
+      required: true
+      selector:
+        select:
+          options:
+            - monday
+            - tuesday
+            - wednesday
+            - thursday
+            - friday
+    slot:
+      name: Slot
+      description: The time slot number to remove.
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 15
+          mode: box
+
+clear_timetable:
+  name: Clear timetable
+  description: Remove all lessons from the timetable.
+  fields:
+    entity_id:
+      name: Entity
+      description: The timetable current lesson sensor entity.
+      required: true
+      selector:
+        entity:
+          integration: ha_timetable
+          domain: sensor
