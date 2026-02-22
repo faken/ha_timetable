@@ -3,7 +3,7 @@
  * Displays a school timetable in a grid layout with inline editing.
  */
 
-const CARD_VERSION = "1.0.8";
+const CARD_VERSION = "1.0.9";
 
 // i18n translations
 const TRANSLATIONS = {
@@ -553,7 +553,6 @@ class HaTimetableCard extends HTMLElement {
       }
       :host {
         display: block;
-        padding: 16px;
       }
       ha-card {
         overflow: hidden;

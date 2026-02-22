@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Final
 
-VERSION: Final = "1.0.8"
+VERSION: Final = "1.0.9"
 DOMAIN: Final = "ha_timetable"
 STORAGE_VERSION: Final = 1
 URL_BASE: Final = "/ha-timetable"
